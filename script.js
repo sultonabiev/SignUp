@@ -22,7 +22,11 @@ function clickMe(event) {
 }
 
 function validate(userReg, userValue) {
-    if (!userReg.test(userValue.value)) {
+    if (userValue.value === "") {
+        userValue.classList.remove("error");
+    } else if (!userReg.test(userValue.value)) {
         userValue.classList.add("error");
+    } else {
+        userValue.classList.remove("error");
     }
 }
